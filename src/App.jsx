@@ -7,6 +7,7 @@ import theme from './theme.jsx';
 import Home from './pages/Home.jsx';
 import UploadNews from './pages/UploadNews.jsx';
 import Navbar from './components/Navbar.jsx';
+import NewsDetail from './pages/NewsDetail.jsx';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/upload" element={<UploadNews />} />
+          <Route path="/news/:id" element={<NewsDetail />} />
         </Routes>
       </Router>
     </ThemeProvider>
