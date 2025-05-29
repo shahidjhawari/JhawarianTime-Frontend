@@ -11,6 +11,13 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { format } from 'date-fns';
 
+const urduTextStyles = {
+  fontFamily: "'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif",
+  lineHeight: "2",
+  textAlign: "right",
+  direction: "rtl",
+};
+
 const NewsDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -106,7 +113,7 @@ const NewsDetail = () => {
         </Box>
 
         {/* News Title */}
-        <Typography variant="h3" component="h1" gutterBottom>
+        <Typography variant="h3" component="h1" gutterBottom sx={urduTextStyles}>
           {newsItem.title}
         </Typography>
 
@@ -118,7 +125,7 @@ const NewsDetail = () => {
         <Divider sx={{ my: 3 }} />
 
         {/* News Description */}
-        <Typography variant="body1" paragraph sx={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
+        <Typography variant="body1" sx={urduTextStyles} paragraph>
           {newsItem.description}
         </Typography>
 

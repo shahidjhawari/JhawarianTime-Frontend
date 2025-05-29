@@ -12,6 +12,13 @@ import {
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+const urduTextStyles = {
+  fontFamily: "'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif",
+  lineHeight: "2",
+  textAlign: "right",
+  direction: "rtl",
+};
+
 const Home = () => {
   const navigate = useNavigate();
   const [news, setNews] = useState([]);
@@ -106,8 +113,7 @@ const Home = () => {
     <Container sx={{ py: 4 }}>
       <Grid container spacing={4}>
         {loading
-          ?
-            Array.from(new Array(3)).map((_, index) => (
+          ? Array.from(new Array(3)).map((_, index) => (
               <Grid item key={index} xs={12} sm={6} md={4}>
                 <Card sx={{ bgcolor: "background.paper", opacity: 0.95 }}>
                   <Box sx={{ height: 200, backgroundColor: "#f5f5f5" }} />
@@ -147,8 +153,10 @@ const Home = () => {
                   <ImageWithPlaceholder src={item.image} alt={item.title} />
 
                   <CardContent>
-                    <Typography variant="h6">{item.title}</Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="h6" sx={urduTextStyles}>
+                      {item.title}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" sx={urduTextStyles}>
                       {item.description}
                     </Typography>
                     <Button

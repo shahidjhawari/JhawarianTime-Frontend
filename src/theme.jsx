@@ -1,6 +1,13 @@
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
+  typography: {
+    fontFamily: [
+      'Jameel Noori Nastaleeq',
+      'Noto Nastaliq Urdu',
+      'sans-serif'
+    ].join(','),
+  },
   palette: {
     primary: {
       main: '#1976D2', // Blue
